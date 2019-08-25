@@ -20,9 +20,15 @@ fn main() {
         }
     };
 
+    //Remove the next line
+    if let Some(last) = args.last_mut() {
+        *last = last.replace('\n', "");
+    }
+
     //remove first 2 args to get only inputs
     args.remove(0);
     args.remove(0);
+
     //loop through the inputs and print the result
     for n in args.iter_mut() {
         check_and_exit(n);
